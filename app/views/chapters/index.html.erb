@@ -1,0 +1,32 @@
+<h1>Listing chapters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Story</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chapters.each do |chapter| %>
+    <tr>
+      <td><%= chapter.name %></td>
+      <td><%= chapter.number %></td>
+
+      <td><%= chapter.story_id %></td>
+      <td><%= link_to 'Show', story_chapter_path(@story,chapter) %></td>
+      <td><%= link_to 'Edit', edit_story_chapter_path(@story,chapter) %></td>
+      <td><%= link_to 'Destroy', story_chapter_path(@story,chapter), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Chapter', new_story_chapter_path %>

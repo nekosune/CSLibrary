@@ -1,0 +1,41 @@
+            Prefix Verb   URI Pattern                                    Controller#Action
+    story_chapters GET    /stories/:story_id/chapters(.:format)          chapters#index
+                   POST   /stories/:story_id/chapters(.:format)          chapters#create
+ new_story_chapter GET    /stories/:story_id/chapters/new(.:format)      chapters#new
+edit_story_chapter GET    /stories/:story_id/chapters/:id/edit(.:format) chapters#edit
+     story_chapter GET    /stories/:story_id/chapters/:id(.:format)      chapters#show
+                   PATCH  /stories/:story_id/chapters/:id(.:format)      chapters#update
+                   PUT    /stories/:story_id/chapters/:id(.:format)      chapters#update
+                   DELETE /stories/:story_id/chapters/:id(.:format)      chapters#destroy
+           stories GET    /stories(.:format)                             stories#index
+                   POST   /stories(.:format)                             stories#create
+         new_story GET    /stories/new(.:format)                         stories#new
+        edit_story GET    /stories/:id/edit(.:format)                    stories#edit
+             story GET    /stories/:id(.:format)                         stories#show
+                   PATCH  /stories/:id(.:format)                         stories#update
+                   PUT    /stories/:id(.:format)                         stories#update
+                   DELETE /stories/:id(.:format)                         stories#destroy
+        categories GET    /categories(.:format)                          categories#index
+                   POST   /categories(.:format)                          categories#create
+      new_category GET    /categories/new(.:format)                      categories#new
+     edit_category GET    /categories/:id/edit(.:format)                 categories#edit
+          category GET    /categories/:id(.:format)                      categories#show
+                   PATCH  /categories/:id(.:format)                      categories#update
+                   PUT    /categories/:id(.:format)                      categories#update
+                   DELETE /categories/:id(.:format)                      categories#destroy
+           authors GET    /authors(.:format)                             authors#index
+                   POST   /authors(.:format)                             authors#create
+        new_author GET    /authors/new(.:format)                         authors#new
+       edit_author GET    /authors/:id/edit(.:format)                    authors#edit
+            author GET    /authors/:id(.:format)                         authors#show
+                   PATCH  /authors/:id(.:format)                         authors#update
+                   PUT    /authors/:id(.:format)                         authors#update
+                   DELETE /authors/:id(.:format)                         authors#destroy
+              tags GET    /tags(.:format)                                tags#index
+                   POST   /tags(.:format)                                tags#create
+           new_tag GET    /tags/new(.:format)                            tags#new
+          edit_tag GET    /tags/:id/edit(.:format)                       tags#edit
+               tag GET    /tags/:id(.:format)                            tags#show
+                   PATCH  /tags/:id(.:format)                            tags#update
+                   PUT    /tags/:id(.:format)                            tags#update
+                   DELETE /tags/:id(.:format)                            tags#destroy
