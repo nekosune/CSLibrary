@@ -1,14 +1,88 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Strongly Typed 1.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<head>
-  <title>Library</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+		<title>Fox Tales Times</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=1040" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Arvo:700" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+		<noscript>
+			<link rel="stylesheet" href="/css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="shortcut icon" href="/favicon.ico" />
 
-<%= yield %>
+		</noscript>
+		<%= csrf_meta_tags %>
+	</head>
+	<body class="right-sidebar">
 
-</body>
+		<!-- Header Wrapper -->
+			<div id="header-wrapper">
+
+				<!-- Header -->
+					<div id="header" class="container">
+						
+						<!-- Logo -->
+							<h1 id="logo"><a href="#">Fox Tales Times</a></h1>
+							<p>The kinda-sorta source for the AB / DL / TB / Furry ABDL community.</p>
+
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li><a class="icon icon-home" href="index.html"><span>Home</span></a></li>
+									<li><a href="http://www.foxtalestimes.com/Games/index.html" class="icon icon-fighter-jet"><span>Games</span></a></li>
+                              						<li><a class="icon icon-picture" href="http://www.foxtalestimes.com/Art/index.html"><span>Art</span></a></li>
+									<li><a class="icon icon-pencil" href="http://www.foxtalestimes.com/Stories.html"><span>Stories</span></a></li>
+									<li><a class="icon icon-bookmark" href="http://z13.invisionfree.com/foxtalestimes/index.php"><span>Forum</span></a></li>
+									<li><a class="icon icon-sitemap" href="http://www.foxtalestimes.com/links/index.html"><span>Links</span></a></li>
+								</ul>
+							</nav>
+
+					</div>
+
+			</div>
+			
+		<!-- Main Wrapper -->
+			<div id="main-wrapper">
+
+				<!-- Main -->
+					<div id="main" class="container">
+						<%= yield %>
+					</div>
+
+			</div>
+
+		<!-- Footer Wrapper -->
+			<div id="footer-wrapper">
+
+				<!-- Footer -->
+
+
+				<!-- Copyright -->
+					<div id="copyright" class="container">
+						<ul class="links">
+							<p>Legal Blah Blah: All media posted here is done so with the consent of
+                                                        the original author, artist, creator, whatever. All art is copyright to the 
+                                                        person who made it, and should not be distributed or re-posted anywhere without 
+                                                        the consent of the creator. Fox Tales Times (FTT) is something of a community 
+                                                        project and meant as a non-profit home to stories, art, games and content 
+                                                        related to adult diaper lovers, adult babies, teen babies, furry diaper lovers 
+                                                        and any mix of the above. This site does not contain any pedophilic material of 
+                                                        any type and should not be confused with such.</p>
+						</ul>
+					</div>
+
+			</div>
+
+	</body>
 </html>
