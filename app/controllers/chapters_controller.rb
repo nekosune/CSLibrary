@@ -15,6 +15,7 @@ class ChaptersController < ApplicationController
     path="#{Rails.root}/stories/#{@story.name}/#{@chapter.name}"
     chapterfile=File.open(path,"r")
     @chaptertext=chapterfile.read
+    @chapterList=@story.chapters.order(:number).page(@chapter.number)
   end
 
   # GET /chapters/new

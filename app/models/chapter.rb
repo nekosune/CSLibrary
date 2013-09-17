@@ -1,6 +1,6 @@
 class Chapter < ActiveRecord::Base
 	belongs_to :story
-
+	paginates_per 1
 	def prev?
 		return number >1
 	end

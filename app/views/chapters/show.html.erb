@@ -2,7 +2,13 @@
 
 
 <article>
-<header>Chapter number <%= @chapter.number %></header>
+<header>
+<center>
+
+<%= paginate @chapterList %>
+<%= page_entries_info @chapterList %>
+</center>
+</header>
 <p>
   <%= @chaptertext %>
 
