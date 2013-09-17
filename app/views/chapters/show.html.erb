@@ -5,7 +5,12 @@
 <header>Chapter number <%= @chapter.number %></header>
 <p>
   <%= @chaptertext %>
+
 </p>
+<p>
+	<%= link_to 'Prev',story_chapter_path(@story,@chapter.prev) if @chapter.prev? %>|
+  	<%= link_to 'Next',story_chapter_path(@story,@chapter.next) if @chapter.next? %>
+ </p>
 </article>
 
 <%= link_to 'Edit', edit_story_chapter_path(@story,@chapter) %> |
