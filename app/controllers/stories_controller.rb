@@ -1,3 +1,4 @@
+require 'pp'
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
 
@@ -59,6 +60,69 @@ class StoriesController < ApplicationController
       format.html { redirect_to stories_url }
       format.json { head :no_content }
     end
+  end
+
+  def loadStories
+    Dir.glob("#{Rails.root}/stories/*.yml") do |storyData|
+      y=YAML.load_file(storyData)
+      y=y[File.basename(storyData,'.*')]
+      story=Story.find_by_name(File.basename(storyData,'.*'))
+      if story.nil?
+        story=Story.new
+      end
+      authors=[]
+
+      fauthors=y["author"]
+      fauthors.each do |fauthor|
+
+        authorDb=Author.find_by_name(fauthor)
+        if authorDb.nil?
+          authorDb=Author.new({name: fauthor, details: ""})
+          authorDb.save!
+        end
+        authors+=[authorDb]
+      end
+      fcategorys=y["category"]
+      categories=[]
+      fcategorys.each do |fcategory|
+        categoryDb=Category.find_by_name(fcategory)
+        if categoryDb.nil?
+          categoryDb=Category.new({name: fcategory,details: ""})
+          categoryDb.save!
+        end
+        categories+=[categoryDb]
+      end
+      ftags=y["tags"]
+      tags=[]
+      ftags.each do |ftag|
+        tagDb=Tag.find_by_name(ftag)
+        if tagDb.nil?
+          tagDb=Tag.new({name: ftag})
+          tagDb.save!
+        end
+        tags+=[tagDb]
+      end
+      story.tags=tags
+      story.categories=categories
+      story.authors=authors
+      story.title=y["title"]
+      story.name=File.basename(storyData,'.*')
+      story.description=y["description"]
+      #Sort out chapters now
+      chapters=[]
+      fchapters=y["chapters"]
+      fchapters.each do |number,name|
+          pp "Chapter: #{number} Name: #{name}"
+          chapter=Chapter.new({name: name,number: number})
+          chapter.save!
+          chapters+=[chapter]
+      end
+      story.chapters=chapters
+      story.save!
+      pp story
+    end
+    
+
   end
 
   private

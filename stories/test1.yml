@@ -1,0 +1,9 @@
+test1:
+    title: test1
+    category: [abdl]
+    tags: [test,fun,happy]
+    author: [testAuthor]
+    description: a Long long long test story!
+        This is a multi line one?
+    chapters:
+        1: 1.txt

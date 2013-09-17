@@ -1,20 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @chapter.name %>
-</p>
 
+<article>
+<header>Chapter number <%= @chapter.number %></header>
 <p>
-  <strong>Number:</strong>
-  <%= @chapter.number %>
+  <%= @chaptertext %>
 </p>
-
-<p>
-  <strong>Story:</strong>
-  <%= @chapter.story_id %>
-</p>
-
+</article>
 
 <%= link_to 'Edit', edit_story_chapter_path(@story,@chapter) %> |
 <%= link_to 'Back', story_chapters_path(@story) %>

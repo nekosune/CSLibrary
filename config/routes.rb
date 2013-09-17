@@ -1,6 +1,7 @@
 Library::Application.routes.draw do
   
 
+  get 'stories/loadStories' => 'stories#loadStories'
   resources :stories do
     resources :chapters  
   end

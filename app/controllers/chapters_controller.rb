@@ -1,3 +1,4 @@
+require "pp"
 class ChaptersController < ApplicationController
   before_action :set_chapter, only: [:show, :edit, :update, :destroy]
   before_action :set_story
@@ -5,12 +6,15 @@ class ChaptersController < ApplicationController
   # GET /chapters
   # GET /chapters.json
   def index
-    @chapters = @story.Chapters
+    @chapters = @story.chapters
   end
 
   # GET /chapters/1
   # GET /chapters/1.json
   def show
+    path="#{Rails.root}/stories/#{@story.name}/#{@chapter.name}"
+    chapterfile=File.open(path,"r")
+    @chaptertext=chapterfile.read
   end
 
   # GET /chapters/new
