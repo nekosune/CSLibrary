@@ -4,7 +4,7 @@ ruby "2.0.0"
 gem 'rails', '4.0.0.beta1'
 
 gem 'pg'
-#gem 'rails_12factor'
+gem 'rails_12factor'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
